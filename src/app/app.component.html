@@ -1,18 +1,12 @@
 <h1 *ngIf="activeGame == ''">Catan Board Generator</h1>
-<h1 *ngIf="activeGame == 'catan'">The Settlers of Catan&trade;</h1>
-<h1 *ngIf="activeGame == 'extension'">Catan 5 & 6 Player Extension&trade;</h1>
-<!-- <h1>Catan Board Generator</h1> -->
 
-<div>
-  <div class="game-selection" *ngIf="activeGame == ''">
-    <form [formGroup]="gameSelectionForm">
-      <select (change)="changeGame()" formControlName="game">
-        <option value="" disabled>Select</option>
-        <option *ngFor="let game of map | keyvalue" [ngValue]="game">{{game.value}}</option>
-      </select>
-    </form>
-  </div>
-  <!-- <app-catan-board-generator></app-catan-board-generator> -->
-  <app-catan-board-generator (newGameEvent)="reset()" *ngIf="activeGame == 'catan'"></app-catan-board-generator>
-  <app-extension-board-generator (newGameEvent)="reset()" *ngIf="activeGame == 'extension'"></app-extension-board-generator>
+<div class="game-selection" *ngIf="activeGame == ''">
+  <form [formGroup]="gameSelectionForm">
+    <select (change)="changeGame()" formControlName="game">
+      <option value="" disabled>Select</option>
+      <option *ngFor="let game of map | keyvalue" [ngValue]="game">{{game.value}}</option>
+    </select>
+  </form>
 </div>
+<app-catan-board-generator (newGameEvent)="reset()" *ngIf="activeGame == 'catan'"></app-catan-board-generator>
+<app-extension-board-generator (newGameEvent)="reset()" *ngIf="activeGame == 'extension'"></app-extension-board-generator>

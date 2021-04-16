@@ -1,10 +1,10 @@
-import { Output, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-catan-board-generator',
   templateUrl: './catan-board-generator.component.html',
-  styleUrls: ['./catan-board-generator.component.css']
+  styleUrls: ['./catan-board-generator.component.scss']
 })
 export class CatanBoardGeneratorComponent implements OnInit {
 
@@ -57,7 +57,6 @@ export class CatanBoardGeneratorComponent implements OnInit {
 
   onSubmit() {
       this.resetHexColors();
-      this.setResourcedHexOutline();
 
       var hex_index = 0;
       var i = Math.floor(Math.random() * this.board_numbers.length);
@@ -272,39 +271,39 @@ export class CatanBoardGeneratorComponent implements OnInit {
   }
 
   setWoodHex(index: any) {
-    document.getElementsByClassName("hex")[index].setAttribute("style", "background-image:url('assets/wood_1.png');background-size:contain");
+    document.getElementsByClassName("col")[index].setAttribute("style", "background-image:url('assets/wood_1.png');background-size:contain");
     document.getElementsByClassName("token")[index].setAttribute("style", "display:inline-block");
   }
 
   setWheatHex(index: any) {
-    document.getElementsByClassName("hex")[index].setAttribute("style", "background-image:url('assets/wheat_1.png');background-size:contain");
+    document.getElementsByClassName("col")[index].setAttribute("style", "background-image:url('assets/wheat_1.png');background-size:contain");
     document.getElementsByClassName("token")[index].setAttribute("style", "display:inline-block");
   }
 
   setSheepHex(index: any) {
-    document.getElementsByClassName("hex")[index].setAttribute("style", "background-image:url('assets/sheep_1.png');background-size:contain");
+    document.getElementsByClassName("col")[index].setAttribute("style", "background-image:url('assets/sheep_1.png');background-size:contain");
     document.getElementsByClassName("token")[index].setAttribute("style", "display:inline-block");
   }
 
   setBrickHex(index: any) {
-    document.getElementsByClassName("hex")[index].setAttribute("style", "background-image:url('assets/brick_1.png');background-size:contain");
+    document.getElementsByClassName("col")[index].setAttribute("style", "background-image:url('assets/brick_1.png');background-size:contain");
     document.getElementsByClassName("token")[index].setAttribute("style", "display:inline-block");
   }
 
   setOreHex(index: any) {
-    document.getElementsByClassName("hex")[index].setAttribute("style", "background-image:url('assets/ore_1.png');background-size:contain");
+    document.getElementsByClassName("col")[index].setAttribute("style", "background-image:url('assets/ore_1.png');background-size:contain");
     document.getElementsByClassName("token")[index].setAttribute("style", "display:inline-block");
   }
 
   setDesertHex(index: any) {
-    document.getElementsByClassName("hex")[index].setAttribute("style", "background-image:url('assets/desert_1.png');background-size:contain");
+    document.getElementsByClassName("col")[index].setAttribute("style", "background-image:url('assets/desert_1.png');background-size:contain");
     document.getElementsByClassName("token")[index].setAttribute("style", "display:none");
   }
 
   resetHexColors() {
-    var el = document.getElementsByClassName('hex');
+    var el = document.getElementsByClassName('col');
     for (var i = 0; i < el.length; i++) {
-      document.getElementsByClassName("hex")[i].setAttribute("style", "background-color:lightskyblue");
+      document.getElementsByClassName("col")[i].setAttribute("style", "background-color:lightskyblue");
     }
   }
 
@@ -315,22 +314,7 @@ export class CatanBoardGeneratorComponent implements OnInit {
     }
   }
 
-  setResourcedHexOutline() {
-    var el = document.getElementsByClassName('hex-outline');
-    for (var i = 0; i < el.length; i++) {
-      document.getElementsByClassName("hex-outline")[i].setAttribute("style", "background-color:lightskyblue");
-    }
-  }
-
-  resetHexOutline() {
-    var el = document.getElementsByClassName('hex-outline');
-    for (var i = 0; i < el.length; i++) {
-      document.getElementsByClassName("hex-outline")[i].setAttribute("style", "background-color:white");
-    }
-  }
-
   onClear() {
-    this.resetHexOutline();
     this.resetHexColors();
     this.resetNumberTokens();
     this.hex1_number = '';

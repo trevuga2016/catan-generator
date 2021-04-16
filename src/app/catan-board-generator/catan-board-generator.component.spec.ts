@@ -2,13 +2,13 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CatanBoardGeneratorComponent } from './catan-board-generator.component';
 
-describe('NewBoardGeneratorComponent', () => {
+describe('CatanBoardGeneratorComponent', () => {
   let component: CatanBoardGeneratorComponent;
   let fixture: ComponentFixture<CatanBoardGeneratorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CatanBoardGeneratorComponent ]
+      declarations: [CatanBoardGeneratorComponent ]
     })
     .compileComponents();
   });

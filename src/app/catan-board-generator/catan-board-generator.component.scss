@@ -1,31 +1,26 @@
-.row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container-fluid {
+    width: max-content;
 }
-.hex {
+h1 {
+    text-align: center;
+}
+.row {
+    width: max-content;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+}
+.col {
     width: 104px;
     height: 120px;
     clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
     background-color: lightskyblue;
-    margin-left: 1.5px;
-    margin-right: 1.5px;
-    margin-bottom: -26px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.hex-hide {
-    width: 104px;
-    height: 120px;
-    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
     margin-left: 1.5px;
     margin-right: 1.5px;
     margin-bottom: -26px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
 }
 .token {
     width: 40px;
@@ -44,4 +39,8 @@
     position: relative;
     text-align: center;
     font-size: 12px;
+}
+input {
+    margin: auto;
+    margin-top: 30px;
 }
